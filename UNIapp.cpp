@@ -1,5 +1,3 @@
-// BBTAGapp.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
 #include "character.h"
 #include "menu.h"
 #include "universal_info.h"
@@ -13,6 +11,7 @@ using namespace std;
 
 int main()
 {
+	// Program runs until the user quits
 	while (1)
 	{
 		int user_input = selectInfoType();	// Universal [1] or Character [2]
@@ -25,12 +24,14 @@ int main()
 			switch (universal_info_input)
 			{
 			case 1:
-				cout << "Cross Burst\n";
+				printInfoGRD();		// GRD
 				break;
 
 			case 2:
-				cout << "Cross Combo\n";
+				printInfoVorpal();	// Vorpal
 				break;
+
+			// TO DO: Add more universal options later, consider putting this into a separate function in this file
 			}
 
 		}
@@ -47,11 +48,9 @@ int main()
 
 	}
 
-
+	// TO DO:
 	//select type of information
 		//selectUniversalInfo()
-			//cross burst
-			//cross raid
 			//reversals
 			//throws
 			//meter gain

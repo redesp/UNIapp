@@ -17,6 +17,13 @@ int getInfoNumber()
 {
 	return 0;
 }
+
+/*
+ *	selectInfoType():
+ *	Inputs:			none
+ *	Outputs:		Valid user input
+ *	Description:	Chooses whether universal info or character info is displayed to the user 
+ */
 int selectInfoType()
 {
 	while (1)
@@ -52,13 +59,19 @@ int selectInfoType()
 }
 
 
+/*
+ *	selectFromUniversal():
+ *	Inputs:			none
+ *	Outputs:		Valid user input
+ *	Description:	Determines which type of universal info to display to the user
+ */
 int selectFromUniversal()
 {
-	while (1) 
+	while (1) // Continues to ask the user for a valid input
 	{
 		cout << "What would you like to know more about?\n";
-		cout << "Enter [1] for 'Cross Burst'\n";
-		cout << "Enter [2] for 'Cross Combo'\n";
+		cout << "Enter [1] for 'GRD'\n";
+		cout << "Enter [2] for 'Vorpal'\n";
 
 		int info{};
 		cin >> info;
@@ -83,11 +96,17 @@ int selectFromUniversal()
 
 }
 
+
+/*
+ *	selectFromCharacter():
+ *	Inputs:			none
+ *	Outputs:		Valid user input
+ *	Description:	Selects a character from the list of available characters
+ */
 string selectFromCharacter()
 {
-	while (1)
+	while (1)	// Continues to ask the user for a valid input
 	{
-
 		cout << "What character would you like to know more about?\n";
 
 		string character_name{};
@@ -103,4 +122,14 @@ string selectFromCharacter()
 
 	}
 	
+}
+
+void printInfoGRD()
+{
+	cout << "GRD Placeholder\n";
+}
+
+void printInfoVorpal()
+{
+	cout << "Vorpal Placeholder\n";
 }

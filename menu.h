@@ -10,5 +10,8 @@ int		getInfoNumber();
 int		selectInfoType();
 int		selectFromUniversal();
 string	selectFromCharacter();
+void	printInfoGRD();
+void	printInfoVorpal();
+
 
 #endif
