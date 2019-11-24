@@ -61,8 +61,6 @@ int main()
 				//displayArchetype()
 				//displayLore()
 				//displayRange()
-				//displayTeamPlacement()
-				//displayPartners()
 		
 
 	return 0;
