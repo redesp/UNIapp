@@ -28,14 +28,14 @@ class Character
 		Character();
 		Character(string name, string archetype, string theme, string date_of_birth, 
 						string gender, string alias, string ability, string weapon);
-		string getName();
-		string getArchetype();
-		string getTheme();
-		string getDateOfBirth();
-		string getGender();
-		string getAlias();
-		string getAbility();
-		string getWeapon();
+		string getName() const;
+		string getArchetype() const;
+		string getTheme() const;
+		string getDateOfBirth() const;
+		string getGender() const;
+		string getAlias() const;
+		string getAbility() const;
+		string getWeapon() const;
 
 };
 

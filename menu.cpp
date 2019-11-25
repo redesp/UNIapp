@@ -42,10 +42,10 @@ int selectInfoType()
 		cout << "Enter [3] to quit\n";
 		cout << "Enter [4] for debug mode\n";
 
-		int universal_info = 1;
-		int character_info = 2;
-		int quit_info	   = 3;
-		int debug_info	   = 4;
+		const int universal_info = 1;
+		const int character_info = 2;
+		const int quit_info		 = 3;
+		const int debug_info	 = 4;
 
 		int user_input = getUserInput();
 
@@ -95,7 +95,7 @@ int selectFromUniversal()
  *	Outputs:		Valid character
  *	Description:	Selects a character from the list of available characters.
  */
-Character selectFromCharacter(vector<Character> vec)
+Character selectFromCharacter(const vector<Character> &vec)
 {
 	while (1)	// Continues to ask the user for a valid input
 	{
@@ -105,7 +105,7 @@ Character selectFromCharacter(vector<Character> vec)
 		cin >> input_character_name;
 
 		// Names shorter than four characters are not possible
-		int smallest_name_length = 4;
+		const int smallest_name_length = 4;
 
 		if (input_character_name.size() < smallest_name_length)
 		{
@@ -158,7 +158,7 @@ Character selectFromCharacter(vector<Character> vec)
 	}
 }
 
-int selectFromCharacterData(Character c)
+int selectFromCharacterData(const Character &c)
 {
 	while (1)
 	{
@@ -168,10 +168,10 @@ int selectFromCharacterData(Character c)
 		cout << "Enter [3] for vorpal trait information\n";
 		cout << "Enter [4] for reversal information\n";
 
-		int general = 1;
-		int notable_moves = 2;
-		int vorpal_trait = 3;
-		int reversals = 4;
+		const int general = 1;
+		const int notable_moves = 2;
+		const int vorpal_trait = 3;
+		const int reversals = 4;
 
 		int user_input = getUserInput();
 
@@ -181,6 +181,27 @@ int selectFromCharacterData(Character c)
 				return user_input;
 		else
 			cout << "Please enter a valid number.\n";
+	}
+}
+
+void selectCharacterInfoCategory(const Character &c, const int user_input)
+{
+	const int general = 1;
+	const int notable_moves = 2;
+	const int vorpal_trait = 3;
+	const int reversals = 4;
+
+	switch (user_input)
+	{
+	case general:
+
+		break;
+
+	case 2:
+
+		break;
+
+		
 	}
 }
 void printInfoGRD()

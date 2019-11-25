@@ -16,9 +16,9 @@ void	printInfoGRD();
 void	printInfoVorpal();
 
 // Character info functions
-Character	selectFromCharacter(vector<Character> vec);
-int	selectFromCharacterData(Character c);
-
+Character	selectFromCharacter(const vector<Character> &vec);
+int	selectFromCharacterData(const Character &c);
+void selectCharacterInfoCategory(const Character &c, const int user_input);
 
 
 

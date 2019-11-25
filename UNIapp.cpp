@@ -16,19 +16,19 @@ int main()
 	// Program runs until the user quits
 	while (1)
 	{
-		int user_input = selectInfoType();	// Universal [1] or Character [2]
+		const int user_input = selectInfoType();	// Universal [1] or Character [2]
 
 		// The choices are mapped to the following numbers
-		int universal_info = 1;
-		int character_info = 2;
-		int quit_info = 3;
-		int debug_info = 4;
+		const int universal_info = 1;
+		const int character_info = 2;
+		const int quit_info = 3;
+		const int debug_info = 4;
 
 		// User selected universal info
 		if (user_input == universal_info)
 		{
 
-			int universal_info_input = selectFromUniversal();	// User inputs a decision here
+			const int universal_info_input = selectFromUniversal();	// User inputs a decision here
 
 			switch (universal_info_input)
 			{
@@ -48,8 +48,8 @@ int main()
 		// User selected character info
 		else if (user_input == character_info)
 		{
-			Character selected_character = selectFromCharacter(character_vector);
-			int character_data_input = selectFromCharacterData(selected_character);
+			const Character selected_character = selectFromCharacter(character_vector);
+			const int character_data_input = selectFromCharacterData(selected_character);
 
 			//some function takes in data input, outputs character info
 		}

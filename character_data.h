@@ -4,8 +4,8 @@
 #include "character.h"
 #include <vector>
 
-void insertCharacter(vector<Character> &vec, Character c);
+void insertCharacter(vector<Character> &vec, const Character c);
 vector<Character> createCharacterVector();
-Character selectCharacter(vector<Character> vec, int index);
+Character selectCharacter(const vector<Character> &vec, const int index);
 
 #endif

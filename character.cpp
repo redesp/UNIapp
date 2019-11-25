@@ -31,42 +31,42 @@ Character::Character(string name, string archetype, string theme, string date_of
 	m_weapon = weapon;
 }
 
-string Character::getName()
+string Character::getName() const
 {
 	return m_name;
 }
 
-string Character::getArchetype()
+string Character::getArchetype() const
 {
 	return m_archetype;
 }
 
-string Character::getTheme()
+string Character::getTheme() const
 {
 	return m_theme;
 }
 
-string Character::getDateOfBirth()
+string Character::getDateOfBirth() const
 {
 	return m_date_of_birth;
 }
 
-string Character::getGender() 
+string Character::getGender() const
 {
 	return m_gender;
 }
 
-string Character::getAlias()
+string Character::getAlias() const
 {
 	return m_alias;
 }
 
-string Character::getAbility()
+string Character::getAbility() const
 {
 	return m_ability;
 }
 
-string Character::getWeapon()
+string Character::getWeapon() const
 {
 	return m_weapon;
 }
