@@ -6,11 +6,6 @@
 #include <iostream>
 #include <vector>
 
-#define UNIVERSAL_INFO 1
-#define CHARACTER_INFO 2
-#define QUIT_INFO	   3
-#define DEBUG_INFO	   4
-
 using namespace std;
 
 int main()
@@ -23,7 +18,14 @@ int main()
 	{
 		int user_input = selectInfoType();	// Universal [1] or Character [2]
 
-		if (user_input == UNIVERSAL_INFO)
+		// The choices are mapped to the following numbers
+		int universal_info = 1;
+		int character_info = 2;
+		int quit_info = 3;
+		int debug_info = 4;
+
+		// User selected universal info
+		if (user_input == universal_info)
 		{
 
 			int universal_info_input = selectFromUniversal();	// User inputs a decision here
@@ -43,29 +45,30 @@ int main()
 
 		}
 
-		else if (user_input == CHARACTER_INFO)
+		// User selected character info
+		else if (user_input == character_info)
 		{
-			Character temp = selectFromCharacter(character_vector);
+			Character selected_character = selectFromCharacter(character_vector);
+			int character_data_input = selectFromCharacterData(selected_character);
 
-			cout << "\nYou entered " << temp.getName() << "\n";
+			//some function takes in data input, outputs character info
+		}
+		
+		// User has quit the program
+		else if (user_input == quit_info)
+		{
+			cout << "Quitting...\n";
+			return 0;
 		}
 
-		else if (user_input == DEBUG_INFO)
+		// Enter debug mode
+		else if (user_input == debug_info)
 		{
-			// Enter debug mode
-			char temp = character_vector[0].getName()[1];
-			temp = tolower(temp);
-
-			cout << "This character is: " << temp << "\n";
-
-		
-			//Character temp = selectCharacter(vec,0);
-
-			//cout << "This character's name is: " << vec[0].getName() << "\n";
-			//cout << "His style is: " << vec[0].getArchetype() << "\n";
+			cout << "Entering debug mode...\n";
+			continue;
 		}
 		else
-			return 0;	// End the program
+			return 0;	// Execution should never reach here
 
 	}
 

@@ -12,7 +12,6 @@ void insertCharacter(vector<Character> &vec, Character c)
 
 vector<Character> createCharacterVector()
 {
-	// TO DO: change parameters to be correct
 	vector<Character> character_vector;
 	
 	Character Akatsuki("Akatsuki", "Straight-forward", "Open War -Again-", "Unknown", "Male", "Thunder God of Present Age", "Blitz Motor", "Taktischeblitzanzug");

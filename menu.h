@@ -7,15 +7,20 @@
 
 using namespace std;
 
-string  getInfoName();
-int		getInfoNumber();
+int		getUserInput();
 int		selectInfoType();
+
+// Universal info functions
 int		selectFromUniversal();
-
-Character	selectFromCharacter(vector<Character> vec);
-
 void	printInfoGRD();
 void	printInfoVorpal();
+
+// Character info functions
+Character	selectFromCharacter(vector<Character> vec);
+int	selectFromCharacterData(Character c);
+
+
+
 
 
 #endif

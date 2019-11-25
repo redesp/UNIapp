@@ -6,30 +6,31 @@
 
 using namespace std;
 
-#define UNIVERSAL_INFO 1
-#define CHARACTER_INFO 2
-#define QUIT_INFO	   3
-#define DEBUG_INFO	   4
-#define SMALLEST_NAME_LENGTH	4
-
-string getInfoName()
+/*
+ *	getUserInput():
+ *	Inputs:			none
+ *	Outputs:		Valid user input
+ *	Description:	Helper function. Retrieves the user's input from cin.
+ */
+int getUserInput()
 {
-	string info{};
-	cin >> info;
+	int input{};
+	cin >> input;
 
-	return info;
-}
+	if (cin.fail()) // has a previous extraction failed?
+	{
+		cin.clear(); // put us back in 'normal' operation mode
+		cin.ignore(32767, '\n'); // and remove the bad input
+	}
 
-int getInfoNumber()
-{
-	return 0;
+	return input;
 }
 
 /*
  *	selectInfoType():
  *	Inputs:			none
  *	Outputs:		Valid user input
- *	Description:	Chooses whether universal info or character info is displayed to the user 
+ *	Description:	Chooses whether universal info or character info is displayed to the user.
  */
 int selectInfoType()
 {
@@ -41,32 +42,20 @@ int selectInfoType()
 		cout << "Enter [3] to quit\n";
 		cout << "Enter [4] for debug mode\n";
 
-		int info{};
-		cin >> info;
+		int universal_info = 1;
+		int character_info = 2;
+		int quit_info	   = 3;
+		int debug_info	   = 4;
 
-		if (cin.fail()) // has a previous extraction failed?
-		{
-			cin.clear(); // put us back in 'normal' operation mode
-			cin.ignore(32767, '\n'); // and remove the bad input
-		}
+		int user_input = getUserInput();
 
-		if (info == UNIVERSAL_INFO || info == CHARACTER_INFO)
-			return info;
-
-		else if (info == QUIT_INFO)
-		{
-			cout << "\nQuitting...";
-			break;
-		}
-
-		else if (info == DEBUG_INFO)
-		{
-			cout << "Entering debug mode...\n";
-			return info;
-		}
+		// Return if a valid number is entered
+		if ((user_input == universal_info) || (user_input == character_info) 
+			|| (user_input == quit_info) || (user_input == debug_info))
+				return user_input;
 
 		else
-			cout << "Please type in a valid number.\n";
+			cout << "Please enter a valid number.\n";
 	}
 
 	return 0;
@@ -77,7 +66,7 @@ int selectInfoType()
  *	selectFromUniversal():
  *	Inputs:			none
  *	Outputs:		Valid user input
- *	Description:	Determines which type of universal info to display to the user
+ *	Description:	Determines which type of universal info to display to the user.
  */
 int selectFromUniversal()
 {
@@ -87,35 +76,24 @@ int selectFromUniversal()
 		cout << "Enter [1] for 'GRD'\n";
 		cout << "Enter [2] for 'Vorpal'\n";
 
-		int info{};
-		cin >> info;
+		int user_input = getUserInput();
 
-		if (cin.fail()) // has a previous extraction failed?
-		{
-			cin.clear(); // put us back in 'normal' operation mode
-			cin.ignore(32767, '\n'); // and remove the bad input
-		}
-
-		if (info == 1)
-			return info;
-
-		else if (info == 2)
-			return info;
+		// Return if a valid number was entered
+		if ((user_input == 1) || (user_input == 2))
+			return user_input;
 
 		else
-			cout << "Please type in a valid number.\n";
+			cout << "Please enter a valid number.\n";
 	}
-
 	return 0;
-
 }
 
 
 /*
  *	selectFromCharacter():
  *	Inputs:			none
- *	Outputs:		Valid user input
- *	Description:	Selects a character from the list of available characters
+ *	Outputs:		Valid character
+ *	Description:	Selects a character from the list of available characters.
  */
 Character selectFromCharacter(vector<Character> vec)
 {
@@ -127,7 +105,9 @@ Character selectFromCharacter(vector<Character> vec)
 		cin >> input_character_name;
 
 		// Names shorter than four characters are not possible
-		if (input_character_name.size() < SMALLEST_NAME_LENGTH)
+		int smallest_name_length = 4;
+
+		if (input_character_name.size() < smallest_name_length)
 		{
 			cout << "Please enter a valid character name.\n";
 			continue;
@@ -152,37 +132,57 @@ Character selectFromCharacter(vector<Character> vec)
 			// Do a case insensitive comparison between strings
 			for (size_t j = 0; j < actual_character_name_length; j++)
 			{
+				// Push the actual character name into a temporary string
 				temp2.push_back(tolower(vec[i].getName()[j]));
 	
-				// Placing the comparison here allows for shorthand names like "Wald" or "Yuzu" to be valid inputs
+				// Placing the comparison here allows for shorthand names like "Wald" or "yuzu" to be valid inputs
 				if (temp1 == temp2)
 				{
 					return_character = vec[i];
 					valid_character = true;
 					break;
 				}
-			
-
 			}
 		}
 		
 		if (valid_character)
 		{
 			return return_character;
-		}
-			
+		}	
 	
 		else // Character is invalid
 		{
 			cout << "Please enter a valid character name.\n";
 			continue;
 		}
-			
-
 	}
-	
 }
 
+int selectFromCharacterData(Character c)
+{
+	while (1)
+	{
+		cout << "\nWhat would you like to know about " << c.getName() << "?\n";
+		cout << "Enter [1] for general character info\n";
+		cout << "Enter [2] for notable moves\n";
+		cout << "Enter [3] for vorpal trait information\n";
+		cout << "Enter [4] for reversal information\n";
+
+		int general = 1;
+		int notable_moves = 2;
+		int vorpal_trait = 3;
+		int reversals = 4;
+
+		int user_input = getUserInput();
+
+		// Return if a valid number was entered
+		if ((user_input == general) || (user_input == notable_moves) 
+			|| (user_input == vorpal_trait) || (user_input == reversals))
+				return user_input;
+		else
+			cout << "Please enter a valid number.\n";
+	}
+}
 void printInfoGRD()
 {
 	cout << "GRD Placeholder\n";
