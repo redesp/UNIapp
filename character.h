@@ -5,6 +5,12 @@
 
 using namespace std;
 
+/*
+ * This class contains info about each character.
+ * More specific information like frame data will be included in 
+ * a separate class - it will be linked to this class via character name.
+ */
+
 class Character
 {
 	private:
@@ -16,9 +22,7 @@ class Character
 		string m_alias;
 		string m_ability;
 		string m_weapon;
-		
-		int m_health{ 0 };
-
+	
 
 	public:
 		Character();
@@ -33,10 +37,7 @@ class Character
 		string getAbility();
 		string getWeapon();
 
-		int getHealth();
-
 };
 
-string selectCharacter(string name);
 
 #endif

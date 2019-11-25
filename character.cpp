@@ -16,8 +16,6 @@ Character::Character()
 	m_ability = EMPTY_STRING;
 	m_weapon = EMPTY_STRING;
 
-	m_health = 0;
-
 }
 
 Character::Character(string name, string archetype, string theme, string date_of_birth,
@@ -71,14 +69,4 @@ string Character::getAbility()
 string Character::getWeapon()
 {
 	return m_weapon;
-}
-
-int Character::getHealth()
-{
-	return m_health;
-}
-
-string selectCharacter(string name)
-{
-	return name;
 }

@@ -1,11 +1,15 @@
 #include "character.h"
+#include "character_data.h"
 #include "menu.h"
 #include "universal_info.h"
 
 #include <iostream>
+#include <vector>
 
 #define UNIVERSAL_INFO 1
 #define CHARACTER_INFO 2
+#define QUIT_INFO	   3
+#define DEBUG_INFO	   4
 
 using namespace std;
 
@@ -43,8 +47,18 @@ int main()
 			cout << "\nYou entered " << character_name << "\n";
 		}
 
+		else if (user_input == DEBUG_INFO)
+		{
+			// Enter debug mode
+			vector<Character> vec;
+			vec = getCharacterVector();
+			//Character temp = selectCharacter(vec,0);
+
+			//cout << "This character's name is: " << vec[0].getName() << "\n";
+			//cout << "His style is: " << vec[0].getArchetype() << "\n";
+		}
 		else
-			return 0;
+			return 0;	// End the program
 
 	}
 

@@ -4,6 +4,10 @@
 
 using namespace std;
 
+#define UNIVERSAL_INFO 1
+#define CHARACTER_INFO 2
+#define QUIT_INFO	   3
+#define DEBUG_INFO	   4
 
 string getInfoName()
 {
@@ -32,6 +36,7 @@ int selectInfoType()
 		cout << "Enter [1] for 'Universal Info'\n";
 		cout << "Enter [2] for 'Character Info'\n";
 		cout << "Enter [3] to quit\n";
+		cout << "Enter [4] for debug mode\n";
 
 		int info{};
 		cin >> info;
@@ -42,17 +47,23 @@ int selectInfoType()
 			cin.ignore(32767, '\n'); // and remove the bad input
 		}
 
-		if (info == 1 || info == 2)
+		if (info == UNIVERSAL_INFO || info == CHARACTER_INFO)
 			return info;
 
-		else if (info == 3)
+		else if (info == QUIT_INFO)
 		{
 			cout << "\nQuitting...";
 			break;
 		}
 
+		else if (info == DEBUG_INFO)
+		{
+			cout << "Entering debug mode...\n";
+			return info;
+		}
+
 		else
-			cout << "Please type in 1, 2, or 3.\n";
+			cout << "Please type in a valid number.\n";
 	}
 
 	return 0;
@@ -89,7 +100,7 @@ int selectFromUniversal()
 			return info;
 
 		else
-			cout << "Please type in 1 or 2\n";
+			cout << "Please type in a valid number.\n";
 	}
 
 	return 0;
@@ -118,7 +129,7 @@ string selectFromCharacter()
 			return character_name;
 
 		else // Character is invalid
-			cout << "Please enter a valid character name. Use the format [FirstName], [LastName] or, [FirstName LastName]\n";
+			cout << "Please enter a valid character name.\n";
 
 	}
 	
