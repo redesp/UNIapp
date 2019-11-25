@@ -32,7 +32,7 @@ vector<Character> createCharacterVector()
 	Character Enkidu("Enkidu", "Footsies/Counter", "Extreme Stream", "August 24th", "Male", "The Maneater", "Maelstrom", "--");
 	insertCharacter(character_vector, Enkidu);
 
-	Character Gordeau("Gordeau", "Footsies/Mix-up", "Rushing Heart", "January 7th", "Male", "The Assassin", "Kerykeion", "The Eliminator");
+	Character Gordeau("Gordeau", "Footsies/Mix-up", "Rushing Heart", "June 23rd", "Male", "The Harvester of Greed", "Snatcher", "Devourer");
 	insertCharacter(character_vector, Gordeau);
 
 	Character Hilda("Hilda", "Zoner/Setplay", "Overwhelming Despair", "November 11th", "Female", "The Uncommon Witch", "Paradox", "Masquerade");
