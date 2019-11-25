@@ -117,7 +117,7 @@ int selectFromUniversal()
  *	Outputs:		Valid user input
  *	Description:	Selects a character from the list of available characters
  */
-string selectFromCharacter(vector<Character> vec)
+Character selectFromCharacter(vector<Character> vec)
 {
 	while (1)	// Continues to ask the user for a valid input
 	{
@@ -133,16 +133,17 @@ string selectFromCharacter(vector<Character> vec)
 			continue;
 		}
 
+		// Put the input string into a temporary string
+		string temp1{};
+		Character return_character;
 		bool valid_character = false;
 
-		string temp1{};
-
-		// Put the input string into a temporary string
 		for (size_t j = 0; j < input_character_name.size(); j++)
 		{
 			temp1.push_back(tolower(input_character_name[j]));
 		}
 
+		// Compare the user input string with the actual character name to see if a matching character exists
 		for (size_t i = 0; i < vec.size(); i++)
 		{
 			size_t actual_character_name_length = vec[i].getName().size();
@@ -156,6 +157,7 @@ string selectFromCharacter(vector<Character> vec)
 				// Placing the comparison here allows for shorthand names like "Wald" or "Yuzu" to be valid inputs
 				if (temp1 == temp2)
 				{
+					return_character = vec[i];
 					valid_character = true;
 					break;
 				}
@@ -166,8 +168,7 @@ string selectFromCharacter(vector<Character> vec)
 		
 		if (valid_character)
 		{
-			cout << "Valid character!\n";
-			return input_character_name;
+			return return_character;
 		}
 			
 	

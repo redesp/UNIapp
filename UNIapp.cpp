@@ -16,7 +16,7 @@ using namespace std;
 int main()
 {
 	// Initialize the character vector
-	vector<Character> character_vector = getCharacterVector();
+	vector<Character> character_vector = createCharacterVector();
 
 	// Program runs until the user quits
 	while (1)
@@ -45,9 +45,9 @@ int main()
 
 		else if (user_input == CHARACTER_INFO)
 		{
-			string character_name = selectFromCharacter(character_vector);
+			Character temp = selectFromCharacter(character_vector);
 
-			cout << "\nYou entered " << character_name << "\n";
+			cout << "\nYou entered " << temp.getName() << "\n";
 		}
 
 		else if (user_input == DEBUG_INFO)

@@ -5,7 +5,7 @@
 #include <vector>
 
 void insertCharacter(vector<Character> &vec, Character c);
-vector<Character> getCharacterVector();
+vector<Character> createCharacterVector();
 Character selectCharacter(vector<Character> vec, int index);
 
 #endif

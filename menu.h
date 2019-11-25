@@ -11,7 +11,9 @@ string  getInfoName();
 int		getInfoNumber();
 int		selectInfoType();
 int		selectFromUniversal();
-string	selectFromCharacter(vector<Character> vec);
+
+Character	selectFromCharacter(vector<Character> vec);
+
 void	printInfoGRD();
 void	printInfoVorpal();
 
