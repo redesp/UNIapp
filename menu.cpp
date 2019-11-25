@@ -36,11 +36,11 @@ int selectInfoType()
 {
 	while (1)
 	{
-		cout << "Would you like to know universal info or character specific info?\n";
+		cout << "\nWould you like to know universal info or character specific info?\n\n";
 		cout << "Enter [1] for 'Universal Info'\n";
 		cout << "Enter [2] for 'Character Info'\n";
 		cout << "Enter [3] to quit\n";
-		cout << "Enter [4] for debug mode\n";
+		cout << "Enter [4] for debug mode\n\n";
 
 		const int universal_info = 1;
 		const int character_info = 2;
@@ -55,7 +55,7 @@ int selectInfoType()
 				return user_input;
 
 		else
-			cout << "Please enter a valid number.\n";
+			cout << "\nPlease enter a valid number.\n\n";
 	}
 
 	return 0;
@@ -72,9 +72,9 @@ int selectFromUniversal()
 {
 	while (1) // Continues to ask the user for a valid input
 	{
-		cout << "What would you like to know more about?\n";
+		cout << "\nWhat would you like to know more about?\n\n";
 		cout << "Enter [1] for 'GRD'\n";
-		cout << "Enter [2] for 'Vorpal'\n";
+		cout << "Enter [2] for 'Vorpal'\n\n";
 
 		int user_input = getUserInput();
 
@@ -83,7 +83,7 @@ int selectFromUniversal()
 			return user_input;
 
 		else
-			cout << "Please enter a valid number.\n";
+			cout << "\nPlease enter a valid number.\n\n";
 	}
 	return 0;
 }
@@ -91,7 +91,7 @@ int selectFromUniversal()
 
 /*
  *	selectFromCharacter():
- *	Inputs:			none
+ *	Inputs:			The constant vector of characters
  *	Outputs:		Valid character
  *	Description:	Selects a character from the list of available characters.
  */
@@ -99,7 +99,7 @@ Character selectFromCharacter(const vector<Character> &vec)
 {
 	while (1)	// Continues to ask the user for a valid input
 	{
-		cout << "What character would you like to know more about?\n";
+		cout << "\nWhat character would you like to know more about?\n\n";
 
 		string input_character_name{};
 		cin >> input_character_name;
@@ -109,7 +109,7 @@ Character selectFromCharacter(const vector<Character> &vec)
 
 		if (input_character_name.size() < smallest_name_length)
 		{
-			cout << "Please enter a valid character name.\n";
+			cout << "\nPlease enter a valid character name.\n\n";
 			continue;
 		}
 
@@ -152,21 +152,27 @@ Character selectFromCharacter(const vector<Character> &vec)
 	
 		else // Character is invalid
 		{
-			cout << "Please enter a valid character name.\n";
+			cout << "\nPlease enter a valid character name.\n\n";
 			continue;
 		}
 	}
 }
 
+/*
+ *	selectFromCharacterData():
+ *	Inputs:			Selected character
+ *	Outputs:		Valid user input for character info
+ *	Description:	Retrieves a valid user input for the character specific info.
+ */
 int selectFromCharacterData(const Character &c)
 {
 	while (1)
 	{
-		cout << "\nWhat would you like to know about " << c.getName() << "?\n";
+		cout << "\nWhat would you like to know about " << c.getName() << "?\n\n";
 		cout << "Enter [1] for general character info\n";
 		cout << "Enter [2] for notable moves\n";
 		cout << "Enter [3] for vorpal trait information\n";
-		cout << "Enter [4] for reversal information\n";
+		cout << "Enter [4] for reversal information\n\n";
 
 		const int general = 1;
 		const int notable_moves = 2;
@@ -180,10 +186,16 @@ int selectFromCharacterData(const Character &c)
 			|| (user_input == vorpal_trait) || (user_input == reversals))
 				return user_input;
 		else
-			cout << "Please enter a valid number.\n";
+			cout << "\nPlease enter a valid number.\n\n";
 	}
 }
 
+/*
+ *	selectCharacterInfoCategory():
+ *	Inputs:			Selected character, user input
+ *	Outputs:		Character specific info based on the chosen category
+ *	Description:	Outputs character specific info
+ */
 void selectCharacterInfoCategory(const Character &c, const int user_input)
 {
 	const int general = 1;
@@ -194,13 +206,16 @@ void selectCharacterInfoCategory(const Character &c, const int user_input)
 	switch (user_input)
 	{
 	case general:
-
 		break;
 
-	case 2:
-
+	case notable_moves:
 		break;
 
+	case vorpal_trait:
+		break;
+
+	case reversals:
+		break;
 		
 	}
 }

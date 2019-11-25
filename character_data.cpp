@@ -5,7 +5,7 @@
 
 
 // Helper function to push onto the character vector
-void insertCharacter(vector<Character> &vec, const Character c)
+void insertCharacter(vector<Character> &vec, const Character &c)
 {
 	vec.push_back(c);
 }
@@ -44,7 +44,7 @@ vector<Character> createCharacterVector()
 	const Character Linne("Linne", "Speedy", "Night Walker", "March 18th", "Female", "The Princess of the Night Blade", "Speed Star", "No Name and Nameless");
 	insertCharacter(character_vector, Linne);
 
-	const Character Londrekia("Londrekia", "Tricky", "Monochrome Memory", "January 7th", "Male", "The Assassin", "Kerykeion", "The Eliminator");
+	const Character Londrekia("Londrekia", "???", "???", "???", "Male", "???", "???", "???");
 	insertCharacter(character_vector, Londrekia);
 
 	const Character Merkava("Merkava", "Setplay/Poker", "Unseen Entities", "Unknown", "Male", "The Basilisk of the Abyss", "Jormungandr", "Dark Bite");

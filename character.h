@@ -36,7 +36,6 @@ class Character
 		string getAlias() const;
 		string getAbility() const;
 		string getWeapon() const;
-
 };
 
 

@@ -27,7 +27,6 @@ int main()
 		// User selected universal info
 		if (user_input == universal_info)
 		{
-
 			const int universal_info_input = selectFromUniversal();	// User inputs a decision here
 
 			switch (universal_info_input)
@@ -50,8 +49,9 @@ int main()
 		{
 			const Character selected_character = selectFromCharacter(character_vector);
 			const int character_data_input = selectFromCharacterData(selected_character);
-
-			//some function takes in data input, outputs character info
+			
+			selectCharacterInfoCategory(selected_character, character_data_input);
+			
 		}
 		
 		// User has quit the program
